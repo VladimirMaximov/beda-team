@@ -44,7 +44,6 @@ coverage/
 *.coverage
 htmlcov/
 
-*.db
 *.sqlite
 *.sqlite3
 
