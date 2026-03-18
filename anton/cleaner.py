@@ -1,18 +1,20 @@
 import csv
 
-RECIPES_INPUT = "recipes.csv"
-INGREDIENTS_INPUT = "recipe_ingredients.csv"
+RECIPES_INPUT = "recipes_3.csv"
+INGREDIENTS_INPUT = "recipe_ingredients_3.csv"
 
-RECIPES_OUTPUT = "recipes_clean.csv"
-INGREDIENTS_OUTPUT = "recipe_ingredients_clean.csv"
+RECIPES_OUTPUT = "recipes_3_clean.csv"
+INGREDIENTS_OUTPUT = "recipe_ingredients_3_clean.csv"
 
 
 def is_bad_ingredients(text):
-
     if text is None:
         return True
 
     text = text.strip()
+
+    if "?" in text:
+        return True
 
     if text == "" or text.lower() == "nan":
         return True
@@ -35,7 +37,6 @@ def is_bad_ingredients(text):
 
 
 def clean_data():
-
     valid_recipe_ids = set()
 
     total = 0
@@ -52,7 +53,6 @@ def clean_data():
         writer.writeheader()
 
         for row in reader:
-
             total += 1
 
             ingredients_text = row.get("ingredients_text")
@@ -87,7 +87,6 @@ def clean_data():
         writer.writeheader()
 
         for row in reader:
-
             ing_total += 1
 
             recipe_id = row["recipe_id"]
