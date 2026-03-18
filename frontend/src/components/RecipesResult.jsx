@@ -12,6 +12,7 @@ export default function RecipesResult({ recipes }) {
                     {recipes.map((recipe) => (
                         <div className="recipe-card" key={recipe.id}>
                             <h3>{recipe.title}</h3>
+                            <a href={recipe.url}>{recipe.url}</a>
 
                             <p className="recipe-score">
                                 Совпадение: {recipe.score}
@@ -42,6 +43,9 @@ export default function RecipesResult({ recipes }) {
                                     </div>
                                 </div>
                             )}
+
+
+
                         </div>
                     ))}
                 </div>
