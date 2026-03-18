@@ -21,6 +21,7 @@ class RecipeSearchRequest(BaseModel):
 class RecipeItem(BaseModel):
     id: int
     title: str
+    url: str
     score: float
     matched_ingredients: List[str]
     missing_ingredients: List[str]

@@ -35,6 +35,7 @@ def build_recipe_match(recipe: Recipe, user_ingredient_ids: set[int]) -> dict | 
     return {
         "id": recipe.id,
         "title": recipe.title,
+        "url": recipe.url,
         "score": round(score, 4),
         "matched_ingredients": sorted(set(matched_names)),
         "missing_ingredients": sorted(set(missing_names)),

@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 
 from roma.app.database import get_db
 from roma.app.schemas import RecipeSearchRequest, RecipeSearchResponse
-from roma.app.repositories.recipes import get_all_recipes_with_ingredients
+from roma.app.db_queries.recipes import get_all_recipes_with_ingredients
 from roma.app.matcher import build_recipe_match, sort_recipe_matches
 
 router = APIRouter(prefix="/recipes", tags=["recipes"])
