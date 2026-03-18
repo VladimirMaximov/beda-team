@@ -31,6 +31,6 @@ def search_recipes(
         if len(match_data["matched_ingredients"]) > 0:
             results.append(match_data)
 
-    sorted_results = sort_recipe_matches(results)
+    sorted_results = sort_recipe_matches(results)[:10]
 
     return {"recipes": sorted_results}
