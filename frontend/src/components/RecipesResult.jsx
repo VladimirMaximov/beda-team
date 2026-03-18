@@ -5,7 +5,7 @@ export default function RecipesResult({ recipes }) {
 
             {recipes.length === 0 ? (
                 <p className="empty-text">
-                    Здесь позже можно сделать красивые карточки рецептов.
+                    Здесь позже будут красивые карточки рецептов
                 </p>
             ) : (
                 <div className="recipes-list">

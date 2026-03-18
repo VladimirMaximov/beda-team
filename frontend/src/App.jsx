@@ -58,7 +58,7 @@ export default function App() {
             <div className="container">
                 <h1>Поиск рецептов по продуктам</h1>
                 <p className="subtitle">
-                    Выберите продукты, которые есть дома, и отправьте их на бэкенд.
+                    Выберите продукты, которые есть дома
                 </p>
 
                 <div className="layout">
