@@ -11,8 +11,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / 'anton'
 DB_PATH = BASE_DIR / 'recipes.db'
 
-RECIPES_CSV = DATA_DIR / 'recipes_clean.csv'
-RECIPE_INGREDIENTS_CSV = DATA_DIR / 'recipe_ingredients_clean.csv'
+RECIPES_CSV = DATA_DIR / 'recipes_3_clean.csv'
+RECIPE_INGREDIENTS_CSV = DATA_DIR / 'recipe_ingredients_3_clean.csv'
 
 
 def create_engine_and_session():
