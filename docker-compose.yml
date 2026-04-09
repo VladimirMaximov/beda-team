@@ -10,7 +10,37 @@ services:
       - .env
     volumes:
       - ./postgres_data:/var/lib/postgresql/14/main/
-    networks: [beda_project]
+    networks:
+      - beda_project
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend/Dockerfile
+    container_name: beda-team-backend
+    restart: unless-stopped
+    depends_on:
+      - db
+    env_file:
+      - .env
+    ports:
+      - "127.0.0.1:8000:8000"
+    networks:
+      - beda_project
+
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/frontend/Dockerfile
+    container_name: beda-team-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+    networks:
+      - beda_project
+
 
 volumes:
   postgres_data:
