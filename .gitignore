@@ -48,3 +48,5 @@ htmlcov/
 uploads/
 media/
 staticfiles/
+
+postgres_data/

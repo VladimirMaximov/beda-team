@@ -1,0 +1,6 @@
+#!/bin/bash
+
+psql --username "$POSTGRES_USER" --dbname postgres <<EOSQL
+CREATE DATABASE "$DB_NAME";
+GRANT ALL PRIVILEGES ON DATABASE "$DB_NAME" TO "$POSTGRES_USER";
+EOSQL

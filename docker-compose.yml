@@ -1,0 +1,20 @@
+services:
+  db:
+    build:
+      context: .
+      dockerfile: docker/postgres/Dockerfile
+    ports:
+      - "${DB_PORT}:5432"
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/14/main/
+    networks: [beda_project]
+
+volumes:
+  postgres_data:
+
+networks:
+  beda_project:
+    name: beda_project

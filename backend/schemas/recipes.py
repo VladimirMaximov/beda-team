@@ -1,18 +1,12 @@
 from typing import List
+
 from pydantic import BaseModel, Field
 
-
-class IngredientItem(BaseModel):
-    id: int
-    name: str
-
-    class Config:
-        from_attributes = True
-
-
-class IngredientSearchResponse(BaseModel):
-    items: List[IngredientItem]
-
+__all__ = [
+    "RecipeItem",
+    "RecipeSearchResponse",
+    "RecipeSearchRequest"
+]
 
 class RecipeSearchRequest(BaseModel):
     ingredient_ids: List[int] = Field(..., min_length=1)
